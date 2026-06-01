@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazendinha Pro - Agro Forte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash-screen">
+    <div class="splash-content">
+        <h1 class="splash-title">FAZENDINHA PRO</h1>
+        <p class="splash-slogan">"Agro forte, equilíbrio entre produção e meio ambiente"</p>
+        <div class="loading-container">
+            <div class="loading-bar" id="load-bar"></div>
+        </div>
+        <p style="margin-top: 10px; font-weight: bold; color: var(--sky-blue);">Semeando sustentabilidade...</p>
+    </div>
+</div>
+
+<div id="start-overlay">
+    <div class="menu-card">
+        <h1 style="font-family: 'Fredoka One'; color: var(--harvest-orange);">MENU PRINCIPAL</h1>
+        <p>Selecione o nível de desafio:</p>
+        <button class="btn-diff easy" onclick="startGame('easy')">🌱 FÁCIL (Verde)</button>
+        <button class="btn-diff med" onclick="startGame('med')">🚜 MÉDIO (Amarelo)</button>
+        <button class="btn-diff hard" onclick="startGame('hard')">🔥 DIFÍCIL (Laranja)</button>
+    </div>
+</div>
+
+<div id="hud">
+    <div class="stat">💰 $<span id="money">0</span></div>
+    <div class="stat">⭐ Nível <span id="level">1</span></div>
+    <div class="stat">🌤️ Tempo: <span id="weather">Sol</span></div>
+</div>
+
+<div id="game-container">
+    <div class="side-panel">
+        <h3>FERRAMENTAS</h3>
+        <button class="btn active" onclick="setTool('plow', this)">🚜 Arar Solo</button>
+        <button class="btn" onclick="setTool('plant', this)">🌱 Plantar</button>
+        <button class="btn" onclick="setTool('water', this)">💧 Regar</button>
+        <button class="btn" onclick="setTool('harvest', this)">🧺 Colher</button>
+    </div>
+
+    <div id="farm-grid"></div>
+
+    <div class="side-panel">
+        <h3>SEMENTES</h3>
+        <button class="btn active" id="s-corn" onclick="setSeed('corn', this)">🌽 Milho ($10)</button>
+        <button class="btn" id="s-tomato" onclick="setSeed('tomato', this)" disabled>🔒 Nível 5</button>
+        <button class="btn" id="s-grape" onclick="setSeed('grape', this)" disabled>🔒 Nível 10</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
